@@ -13,11 +13,14 @@
 				</el-menu> -->
 
 
-				<div class="logo"><a href="#">鋆合能源</a></div>
-					<div class="nav-pill">
-						<router-link :to="{ name: 'content'}">首页</router-link>
-						<router-link :to="{ name: 'contact'}">联系我们</router-link>
-					</div>
+				<div class="logo">
+					<img :src="logo"/>
+					<span style="padding-left: 10px">鋆合能源</span>
+				</div>
+				<div class="nav-pill">
+					<router-link :to="{ name: 'content'}">首页</router-link>
+					<router-link :to="{ name: 'contact'}">联系我们</router-link>
+				</div>
 			</el-header>
 			<el-main>
 				<section class="app-main">
@@ -27,12 +30,12 @@
 				</section>
 			</el-main>
 			<el-footer>
-				<div class="logo">
-					<img src="" alt="">
+				<div class="footer">
+					<div class="slogan">
+					  Copyright © 鋆合能源有限公司 
+					</div>
 				</div>
-				<div class="slogan">
-					同心筑梦 不断超越
-				</div>
+				
 			</el-footer>
 		</el-container>
 	</div>
@@ -45,7 +48,7 @@
 	
 		data(){
 			return {
-				
+				logo: require('../assets/img/logo.jpg'),
 			}
 		},
 		mounted(){
@@ -60,12 +63,27 @@
 <style lang="less">
 	@import '../style/mixin';
 	.home-wrapper{
+		
+		.el-main, .el-footer {
+			padding: 0;
+		}
 		//   color: rgb(51, 51, 51);
     // font-family: Helvetica, Arial, sans-serif;
 		.header {
+			height: 100px !important;
 			display: flex;
+			align-items: center;
 			.el-menu-item {
 				border-bottom: 0;
+			}
+			.logo {
+				display: flex;
+    		align-items: center;
+				font-size: 28px;
+				padding-right: 22px;
+				img {
+					height: 60px;
+				}
 			}
 		}
 		.nav-pill {
@@ -77,6 +95,18 @@
 				color: rgb(119, 119, 119);
 				font-family: 'PingFang SC', "Microsoft YaHei";
 			}
+		}
+		.footer {
+			background: #000;
+			height: 125px;
+			background: #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.slogan {
+			font-size: 13px;
+			color: rgb(153, 153, 153);
 		}
 	}
 </style>
